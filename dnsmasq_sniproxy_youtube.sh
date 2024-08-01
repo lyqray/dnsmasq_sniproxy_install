@@ -517,7 +517,7 @@ only_sniproxy(){
     echo ""
     echo -e "${yellow}SNI Proxy 已完成安装！${plain}"
     echo ""
-    echo -e "${yellow}将Netflix的相关域名解析到 $(get_ip) 即可以观看Netflix节目了。${plain}"
+    echo -e "${yellow}将Netflix的相关域名解析到 $(get_ip) 即可以观看Youtube节目了。${plain}"
     echo ""
 }
 
