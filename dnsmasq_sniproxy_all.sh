@@ -279,8 +279,8 @@ install_dnsmasq(){
     fi
     [ ! -f /usr/sbin/dnsmasq ] && echo -e "[${red}Error${plain}] 安装dnsmasq出现问题，请检查." && exit 1
     download /etc/dnsmasq.d/custom_netflix.conf https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq.conf
-    download /tmp/proxy-domains.txt https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
-    for domain in $(cat /tmp/proxy-domains.txt); do
+    download /tmp/proxy-domains-all.txt https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/proxy-domains-all.txt
+    for domain in $(cat /tmp/proxy-domains-all.txt); do
         printf "address=/${domain}/${publicip}\n"\
         | tee -a /etc/dnsmasq.d/custom_netflix.conf > /dev/null 2>&1
     done
@@ -299,7 +299,7 @@ install_dnsmasq(){
         systemctl restart dnsmasq
     fi
     cd /tmp
-    rm -rf /tmp/dnsmasq-2.90 /tmp/dnsmasq-2.90.tar.gz /tmp/proxy-domains.txt
+    rm -rf /tmp/dnsmasq-2.90 /tmp/dnsmasq-2.90.tar.gz /tmp/proxy-domains-all.txt
     echo -e "[${green}Info${plain}] dnsmasq install complete..."
 }
 
@@ -377,7 +377,7 @@ install_sniproxy(){
     fi
     [ ! -f /usr/sbin/sniproxy ] && echo -e "[${red}Error${plain}] 安装Sniproxy出现问题，请检查." && exit 1
     download /etc/sniproxy.conf https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf
-    download /tmp/sniproxy-domains.txt https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
+    download /tmp/sniproxy-domains.txt https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains-all.txt
     sed -i -e 's/\./\\\./g' -e 's/^/    \.\*/' -e 's/$/\$ \*/' /tmp/sniproxy-domains.txt || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
     sed -i '/table {/r /tmp/sniproxy-domains.txt' /etc/sniproxy.conf || (echo -e "[${red}Error:${plain}] Failed to configuration sniproxy." && exit 1)
     if [ ! -e /var/log/sniproxy ]; then
@@ -470,7 +470,7 @@ install_all(){
     echo ""
     echo -e "${yellow}Dnsmasq + SNI Proxy 已完成安装！${plain}"
     echo ""
-    echo -e "${yellow}将您的DNS更改为 $(get_ip) 即可以观看Netflix节目了。${plain}"
+    echo -e "${yellow}将您的DNS更改为 $(get_ip) 即可以观看Netflix+Youtube节目了。${plain}"
     echo ""
 }
 
@@ -505,7 +505,7 @@ only_dnsmasq(){
     echo ""
     echo -e "${yellow}Dnsmasq 已完成安装！${plain}"
     echo ""
-    echo -e "${yellow}将您的DNS更改为 $(get_ip) 即可以观看Netflix节目了。${plain}"
+    echo -e "${yellow}将您的DNS更改为 $(get_ip) 即可以观看Netflix+Youtube节目了。${plain}"
     echo ""
 }
 
@@ -517,7 +517,7 @@ only_sniproxy(){
     echo ""
     echo -e "${yellow}SNI Proxy 已完成安装！${plain}"
     echo ""
-    echo -e "${yellow}将Netflix的相关域名解析到 $(get_ip) 即可以观看Netflix节目了。${plain}"
+    echo -e "${yellow}将Netflix的相关域名解析到 $(get_ip) 即可以观看Netflix+Youtube节目了。${plain}"
     echo ""
 }
 
