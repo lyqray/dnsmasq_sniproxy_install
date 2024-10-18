@@ -30,14 +30,44 @@
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -f
 ```
 
+### 快速安装-宋仲基版（推荐）：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_youtube.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_youtube.sh && bash dnsmasq_sniproxy_youtube.sh -f
+```
+
+### 快速安装-完全版（推荐）：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_all.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_all.sh && bash dnsmasq_sniproxy_all.sh -f
+```
+
 ### 普通安装：
 ``` Bash
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -i
 ```
 
+### 普通安装-宋仲基版：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_youtube.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_youtube.sh && bash dnsmasq_sniproxy_youtube.sh -i
+```
+
+### 普通安装-完全版：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_all.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_all.sh && bash dnsmasq_sniproxy_all.sh -i
+```
+
 ### 卸载方法：
 ``` Bash
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -u
+```
+
+### 卸载方法-宋仲基版：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_youtube.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_youtube.sh && bash dnsmasq_sniproxy_youtube.sh -u
+```
+
+### 卸载方法-完全版：
+``` Bash
+wget --no-check-certificate -O dnsmasq_sniproxy_all.sh https://raw.githubusercontent.com/lyqray/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy_all.sh && bash dnsmasq_sniproxy_all.sh -u
 ```
 
 ### 使用方法：
