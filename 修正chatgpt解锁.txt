@@ -1,0 +1,15 @@
+PS：请先保证解锁机解锁chatgpt
+1、/etc/sniproxy.conf修改resolver的nameserver为解锁机本地dns
+如：
+resolver {
+    nameserver dnsv4
+    nameserver [dnsv6] # local dns should be better
+    mode ipv4_only
+}
+
+2、/etc/dnsmasq.d/custom_netflix.conf修改nameserver为解锁机本地dns
+如：
+server=dnsv4
+server=dnsv6
+server=208.67.222.222
+server=4.2.2.1

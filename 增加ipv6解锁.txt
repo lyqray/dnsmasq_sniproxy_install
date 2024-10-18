@@ -1,0 +1,35 @@
+1、/etc/sniproxy.conf修改listerner，0.0.0.0修改成实际IP，并增加ipv6字段
+如：
+listener ipv4:80 {
+    proto http
+    access_log {
+        filename /var/log/sniproxy/http_access.log
+        priority notice
+    }
+}
+listener [ipv6]:80 {
+    proto http
+    access_log {
+        filename /var/log/sniproxy/http_access.log
+        priority notice
+    }
+}
+listener ipv4:443 {
+    proto tls
+    access_log {
+        filename /var/log/sniproxy/https_access.log
+        priority notice
+    }
+}
+listener [ipv6]:443 {
+    proto tls
+    access_log {
+        filename /var/log/sniproxy/https_access.log
+        priority notice
+    }
+}
+
+2、/etc/dnsmasq.d/custom_netflix.conf复制并增加ipv6分流地址
+如：
+address=/akadns.net/ipv4
+address=/akadns.net/[ipv6]
