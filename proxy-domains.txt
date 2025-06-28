@@ -71,18 +71,6 @@ ggpht.com
 googlevideo.com
 gvt2.com
 
-withyoutube.com
-youtube-nocookie.com
-youtube.com
-youtubeeducation.com
-youtubefanfest.com
-youtubegaming.com
-youtubego.com
-youtubei.googleapis.com
-youtubekids.com
-youtubemobilesupport.com
-ytimg.com
-
 audio4-ak-spotify-com.akamaized.net
 dn-spotify-experiments.conductrics.com
 heads-ak-spotify-com.akamaized.net
